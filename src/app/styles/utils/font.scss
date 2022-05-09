@@ -1,0 +1,208 @@
+@import './adaptive.scss';
+@import './colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+@mixin page-title {
+  font-family: "Roboto";
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include laptop {
+    font-size: 36px;
+  }
+
+  @include phones {
+    font-size: 30px;
+  }
+}
+
+@mixin item-title {
+  font-family: "Raleway";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include laptop {
+    font-size: 30px;
+  }
+
+  @include phones {
+    font-size: 24px;
+  }
+}
+
+@mixin item-bold-title {
+  font-family: "Raleway";
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include laptop {
+    font-size: 30px;
+  }
+
+  @include phones {
+    font-size: 24px;
+  }
+}
+
+@mixin item-property-title {
+  font-family: "Roboto Condensed";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+@mixin item-price {
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 20px;
+  }
+}
+
+@mixin item-attributes-title {
+  font-family: "Raleway";
+  font-style: "Medium";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 16px;
+  }
+}
+
+@mixin item-description {
+  font-family: "Raleway";
+  font-style: "Medium";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+@mixin card-title {
+  font-family: "Raleway";
+  font-style: "Light";
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+@mixin card-bold-title {
+  font-family: "Raleway";
+  font-style: "Medium";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+@mixin card-price {
+  font-family: "Raleway";
+  font-style: "Medium";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $text-primary;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+@mixin card-out-of-stock-text {
+  font-family: 'Raleway';
+  font-style: 'Regular';
+  font-weight: 400;
+  font-size: 24px;
+  color: $out-of-text-color;
+}
+
+@mixin button-text {
+  font-family: "Raleway";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
+
+@mixin cart-item-attribute-title {
+  font-family: "Raleway";
+  font-style: "Medium";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  color: $text-primary;
+
+  @include phones {
+    font-size: 14px;
+  }
+}
