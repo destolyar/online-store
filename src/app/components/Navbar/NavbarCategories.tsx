@@ -1,22 +1,18 @@
 import React from "react"
-import '../../styles/components/Navbar/NavbarCategories.scss'
-
 import { connect } from "react-redux"
 import { getCategories } from "../../requests"
-import { setCategory } from "../../slices/category"
+import { setCategory } from "../../slices/categorySlice"
 import { dispatch } from "../../store"
-import { NavbarCategoriesProps, NavbarCategoriesState } from "./enities/interfaces/navbar-categories"
+import { NavbarCategoriesProps, NavbarCategoriesState } from "./enities/interfaces/categories"
 import { Action, Dispatch } from "@reduxjs/toolkit"
+import '../../styles/components/Navbar/NavbarCategories.scss'
 
 
 class NavbarCategories extends React.Component<NavbarCategoriesProps, NavbarCategoriesState> {
-  constructor(props: NavbarCategoriesProps) {
-    super(props)
-    
-    this.state = {
-      categories: [],
-    }
+  state = {
+    categories: [],
   }
+  
   
   componentDidMount() {
     getCategories().then(item => {
@@ -47,7 +43,7 @@ class NavbarCategories extends React.Component<NavbarCategoriesProps, NavbarCate
   }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<Action<unknown>>) => ({
+const mapDispatchToProps = (dispatch: Dispatch<Action<string>>) => ({
   actions: {
     changeCategory: (category: string) => dispatch(setCategory(category))
   }

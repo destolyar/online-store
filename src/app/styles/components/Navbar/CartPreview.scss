@@ -1,0 +1,12 @@
+@import '../../utils/utils.scss';
+
+.cart-preview {
+  &__image {
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      @include default-hover;
+    }
+  }
+}

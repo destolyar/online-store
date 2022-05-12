@@ -1,14 +1,14 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
-import cart from "./slices/cart"
-import category from "./slices/category"
-import currency from "./slices/currency"
-import currentProducts from "./slices/currentProducts"
+import cartSlice from "./slices/cartSlice"
+import categorySlice from "./slices/categorySlice"
+import currencySlice from "./slices/currencySlice"
+import currentProductsSlice from "./slices/currentProductsSlice"
 
 const rootReducer = combineReducers({
-  currency,
-  cart,
-  currentProducts,
-  category
+  currencySlice,
+  cartSlice,
+  currentProductsSlice,
+  categorySlice
 })
 
 export const store = configureStore({

@@ -66,6 +66,19 @@ export const getCategories = () => {
   }).then((i => i.data.categories.map(((i: {name: string}) => i.name))))
 }
 
+export const getCurrencies = () => {
+  return client.query({
+    query: gql`
+      query getCurrencies {
+        currencies {
+          symbol
+          label
+        }
+      }
+    `
+  }).then((i => i.data.currencies))
+}
+
 export const getProductById = (id: string) => {
   return client.query({
     query: gql`
