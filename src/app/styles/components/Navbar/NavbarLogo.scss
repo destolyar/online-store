@@ -1,1 +1,8 @@
 @import '../../utils/utils.scss';
+
+.navbar__logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}

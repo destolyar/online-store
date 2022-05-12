@@ -4,8 +4,8 @@ const initialState = {
   jopa: ['']
 }
 
-const cartSlice = createSlice({
-  name: 'cart',
+const currentProducts = createSlice({
+  name: 'currentProducts',
   initialState,
   reducers: {
     addProduct(state, action) {
@@ -14,5 +14,5 @@ const cartSlice = createSlice({
   }
 })
 
-export default cartSlice.reducer
-export const {} = cartSlice.actions
+export default currentProducts.reducer
+export const {} = currentProducts.actions

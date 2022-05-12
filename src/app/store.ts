@@ -1,16 +1,21 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
-import cartSlice from "./slices/cartSlice"
-import currencySlice from "./slices/currencySlice"
-import currentProductsSlice from "./slices/currentProductsSlice"
+import cart from "./slices/cart"
+import category from "./slices/category"
+import currency from "./slices/currency"
+import currentProducts from "./slices/currentProducts"
 
 const rootReducer = combineReducers({
-  currencySlice,
-  cartSlice,
-  currentProductsSlice
+  currency,
+  cart,
+  currentProducts,
+  category
 })
 
-const store = configureStore({
+export const store = configureStore({
   reducer: rootReducer
 })
+
+export const dispatch = store.dispatch
+export const select = store.getState
 
 export type RootState = ReturnType<typeof store.getState>

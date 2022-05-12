@@ -4,7 +4,7 @@ const initialState = {
   jopa: ['']
 }
 
-const currencySlice = createSlice({
+const currency = createSlice({
   name: 'currency',
   initialState,
   reducers: {
@@ -14,5 +14,5 @@ const currencySlice = createSlice({
   }
 })
 
-export default currencySlice.reducer
-export const {} = currencySlice.actions
+export default currency.reducer
+export const {} = currency.actions
