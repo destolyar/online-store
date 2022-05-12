@@ -21,10 +21,6 @@ export class CurrencyDropdown extends React.Component<CurrencyDropdownProps, Cur
     getCurrencies().then(i => this.setState({currencies: i}))
   }
 
-  componentDidUpdate() {
-    console.log(this.state.currencies)
-  }
-
   closeDropdown() {
     this.setState((state: CurrencyDropdownState) => ({
       isOpen: !state.isOpen
