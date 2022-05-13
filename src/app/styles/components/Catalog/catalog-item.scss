@@ -1,0 +1,27 @@
+@import '../../utils/utils.scss';
+
+.catalog-item-container {
+  align-self: center;
+  justify-self: center;
+
+  &:hover {
+    @include default-hover;
+  }
+
+  &__cart {
+    @include catalog-item-button;
+
+    &:hover {
+      @include default-hover;
+    }
+  }
+
+  &__item {
+    padding: 15px;
+    
+    &__image {
+      height: 350px;
+      object-fit: contain;
+    }
+  }
+}

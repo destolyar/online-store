@@ -1,0 +1,22 @@
+@import '../../utils/utils.scss';
+
+.catalog {
+  padding: 100px 0;
+  &__title {
+    @include page-title;
+    margin-bottom: 120px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include desktop {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include laptop {
+      grid-template-columns: 1fr;
+    }
+  }
+}
