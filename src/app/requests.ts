@@ -16,7 +16,7 @@ export const getProductsByCategory = (category: string) => {
         }
       }
     `
-  })
+  }).then(item => item.data.category)
 }
 
 export const getAllProducts = () => {

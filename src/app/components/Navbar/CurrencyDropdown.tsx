@@ -17,10 +17,18 @@ export class CurrencyDropdown extends React.Component<CurrencyDropdownProps, Cur
     isOpen: false
   }
   
+  //fetching products and auto-closing event setting
   componentDidMount() {
     getCurrencies().then(i => this.setState({currencies: i}))
+    document.addEventListener("click", (e) => {
+      const element = e.target as HTMLElement
+      if((!element.className.includes("currency-dropdown-container")) && this.state.isOpen) {
+        this.closeDropdown()
+      }
+    })
   }
 
+  //close or open dropdown
   closeDropdown() {
     this.setState((state: CurrencyDropdownState) => ({
       isOpen: !state.isOpen
