@@ -1,0 +1,81 @@
+@import './utils/utils.scss';
+
+/* Normalize box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Delete paddings */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+/* Delete margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Вody setup */
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  height: 100vh;
+}
+
+
+/*Delete default styles for lists with class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Default styles for elements without classes */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Adaptive images */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Fonts extends */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}

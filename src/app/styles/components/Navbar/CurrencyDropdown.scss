@@ -1,0 +1,69 @@
+@import '../../utils/utils.scss';
+
+.currency-dropdown-container {
+  display: flex;
+  margin-left: auto;
+  margin-right: 20px;
+  position: relative;
+
+  &__info {
+    display: flex;
+    align-items: center;
+
+    &__symbol {
+      @include raleway-regular;
+      width: 25px;
+    }
+
+    &__open-cart {
+      transform: rotate(90deg);
+      padding: 10px;
+      transition: .5s;
+      user-select: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__checkbox:checked ~ &__info__open-cart {
+    transform: rotate(270deg);
+  }
+  
+  &__checkbox:checked ~ &__currency-dropdown {
+    min-height: auto;
+    max-height: 400px;
+  }
+
+  &__currency-dropdown {
+    position: absolute;
+    overflow: hidden;
+    top: 50px;
+    left: -30px;
+    min-width: 100px;
+    min-height: 0px;
+    max-height: 0px;
+    transition: .5s;
+    filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
+    background-color: #FFFFFF;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      padding-left: 20px;
+      @include raleway-regular;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(218, 218, 218);
+        transition: .3s;
+      }
+    }
+  }
+}
