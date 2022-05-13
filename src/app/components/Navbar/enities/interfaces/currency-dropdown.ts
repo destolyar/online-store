@@ -1,13 +1,13 @@
-import { currency } from "../../../../enities/interfaces/data"
+import { Currency } from "../../../../enities/interfaces/data"
 
 export interface CurrencyDropdownProps {
-  currency: currency,
+  currency: Currency,
   actions: {
-    changeCurrency: (currency: currency) => void
+    changeCurrency: (currency: Currency) => void
   }
 }
 
 export interface CurrencyDropdownState {
-  currencies: currency[]
+  currencies: Currency[]
   isOpen: boolean
 }

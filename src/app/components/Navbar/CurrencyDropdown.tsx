@@ -1,7 +1,7 @@
 import { Action, Dispatch } from "@reduxjs/toolkit";
 import React from "react";
 import { connect } from "react-redux";
-import { currency } from "../../enities/interfaces/data";
+import { Currency } from "../../enities/interfaces/data";
 import { getCurrencies } from "../../requests";
 import { setCurrency } from "../../slices/currencySlice";
 import { RootState } from "../../store";
@@ -48,7 +48,7 @@ export class CurrencyDropdown extends React.Component<CurrencyDropdownProps, Cur
         <input className="currency-dropdown-container__checkbox" 
           type="checkbox" checked={this.state.isOpen} onChange={() => {}}/>
         <div className="currency-dropdown-container__currency-dropdown">
-            {this.state.currencies.map((item: currency) => 
+            {this.state.currencies.map((item: Currency) => 
               <div className="currency-dropdown-container__currency-dropdown__item" 
                 key={item.label} 
                 onClick={() => {
@@ -73,7 +73,7 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch<Action<string>>) => ({
   actions: {
-    changeCurrency: (currency: currency) => dispatch(setCurrency(currency))
+    changeCurrency: (currency: Currency) => dispatch(setCurrency(currency))
   }
 })
 

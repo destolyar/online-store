@@ -8,8 +8,16 @@ export const getProductsByCategory = (category: string) => {
         category(input: {title: "${category}"}) {
           name
           products {
+            id
             name
+            inStock
+            brand
+            gallery
             prices {
+              currency {
+                label,
+                symbol
+              }
               amount
             }
           }
