@@ -25,3 +25,23 @@
   font-weight: 700;
   font-size: 1.2rem;
 }
+
+@mixin page-title {
+  font-family: "Roboto";
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: capitalize;
+
+  color: $text-primary;
+
+  @include laptop {
+    font-size: 36px;
+  }
+
+  @include phones {
+    font-size: 30px;
+  }
+}

@@ -9,25 +9,12 @@
   background-color: $button-add-to-cart-background;
 }
 
-@mixin order-button {
+@mixin catalog-item-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
   height: 50px;
-  width: 300px;
-  border: 0;
-  color: $button-text-secondary;
-  background-color: $button-add-to-cart-background;
-}
-
-@mixin cart-preview-view-bag-button {
-  padding: 10px 20px;
-  @include button-text;
-  background-color: transparent;
-  border: 2px solid #000000;
-}
-
-@mixin cart-preview-check-out-button {
-  padding: 10px 20px;
-  @include button-text;
-  border: 0;
-  color: $text-secondary;
-  background-color: $button-check-out-background;
+  border-radius: 50%;
+  background-color: $catalog-item-button-background;
 }
