@@ -60,9 +60,11 @@ class CatalogItem extends React.Component<CatalogItemProps & RouteComponentProps
         <div className="catalog-item-container__item">
           {(inStock) ? <img className="catalog-item-container__item__image" src={gallery[0]} alt="Product image"/> : 
             <OutOfStock><img className="catalog-item-container__item__image" src={gallery[0]} alt="Product image"/></OutOfStock>}
-          <p className="catalog-item-container__item__brand">{brand}</p>
-          <p className="catalog-item-container__item__name">{name}</p>
-          <p className="catalog-item-container__item__price">{symbol + ' ' + price}</p>
+          <div className="catalog-item-container__item__info">
+            <p className="catalog-item-container__item__info__brand">{brand}</p>
+            <p className="catalog-item-container__item__info__name">{name}</p>
+            <p className="catalog-item-container__item__info__price">{symbol + ' ' + price}</p>
+          </div>
         </div>
       </div>
     )
