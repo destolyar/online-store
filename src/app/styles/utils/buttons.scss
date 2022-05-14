@@ -1,12 +1,13 @@
 @import './colors.scss';
 @import './font.scss';
 
-@mixin add-to-cart-button {
+@mixin add-product-button {
   height: 50px;
   width: 300px;
   border: 0;
+  text-transform: uppercase;
   color: $button-text-secondary;
-  background-color: $button-add-to-cart-background;
+  background-color: $add-product-button-background;
 }
 
 @mixin catalog-item-button {

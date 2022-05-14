@@ -28,7 +28,7 @@ export interface CatalogProduct {
   prices: Prices[]
 }
 
-export interface ItemPageProduct {
+export interface ProductPageProduct {
   name: string,
   inStock: boolean,
   gallery: string[],

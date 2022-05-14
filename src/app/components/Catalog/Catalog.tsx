@@ -41,14 +41,14 @@ class Catalog extends React.Component<CatalogProps, CatalogState> {
     const { currency, category } = this.props
 
     return(
-      <main className="catalog">
+      <section className="catalog">
         <h1 className="catalog__title">Category: {category}</h1>
-        <div className="catalog__items">
+        <section className="catalog__items">
           {products.map((product: CatalogProduct) => 
             <CatalogItem key={product.id} product={product} currency={currency}/>
           )}
-        </div>
-      </main>
+        </section>
+      </section>
     )
   }
 }

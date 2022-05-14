@@ -1,0 +1,47 @@
+@import '../../utils/utils.scss';
+
+.product-info {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+
+  &__titles {
+    &__brand {
+      @include raleway-medium;
+      font-size: 30px;
+    }
+    
+    &__name {
+      @include raleway-regular;
+      font-size: 30px;
+    }
+  }
+
+  &__price {
+    @include raleway-bold;
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__amount {
+      font-size: 24px;
+    }
+  }
+
+  &__add-product-button {
+    @include add-product-button;
+
+    &:hover {
+      @include default-hover;
+    }
+  }
+
+  &__description {
+    @include raleway-regular;
+
+    ul > li {
+      margin-bottom: 5px;
+    }
+  }
+}

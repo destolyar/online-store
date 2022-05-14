@@ -7,6 +7,10 @@ export class ImageSwitcher extends React.Component<ImageSwitcherProps, ImageSwit
     pickedImage: 0
   }
 
+  changeImage(imagePosition: number) {
+    this.setState({pickedImage: imagePosition})
+  }
+
   render() {
     const { gallery } = this.props
     const { pickedImage } = this.state
@@ -18,7 +22,7 @@ export class ImageSwitcher extends React.Component<ImageSwitcherProps, ImageSwit
             <img className="image-switcher__images__image" 
               key={index}
               src={image} alt="product image" 
-              onClick={() => this.setState({pickedImage: index})}/>)}
+              onClick={() => this.changeImage(index)}/>)}
         </div>
         <img className="image-switcher__picked-image" src={gallery[pickedImage]} alt="" />
       </section>
