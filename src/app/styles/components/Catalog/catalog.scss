@@ -2,6 +2,8 @@
 
 .catalog {
   padding: 100px 0;
+  height: calc(100vh - 80px);
+  overflow: scroll;
   &__title {
     @include page-title;
     margin-bottom: 120px;

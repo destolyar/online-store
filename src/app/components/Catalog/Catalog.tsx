@@ -5,7 +5,7 @@ import { getProductsByCategory } from '../../requests'
 import { CatalogProps, CatalogState } from "./enities/interfaces/catalog"
 import { CatalogProduct } from "../../enities/interfaces/data"
 import CatalogItem from "./CatalogItem"
-import '../../styles/components/Catalog/catalog.scss'
+import '../../styles/components/Catalog/Catalog.scss'
 
 class Catalog extends React.Component<CatalogProps, CatalogState> {
   state = {
