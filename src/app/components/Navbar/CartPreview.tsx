@@ -29,7 +29,7 @@ export class PreviewCart extends React.Component<CartPreviewProps, CartPreviewSt
     return(
       <div className="cart-preview-container">
         <input className="cart-preview-container__checkbox" type="checkbox" checked={this.state.isOpen} onChange={() => {}}/>
-        <img className="cart-preview-container__image" src="./header-cart.png" alt="cart" onClick={() => this.closeWindow()}/>
+        <img className="cart-preview-container__image" src="/header-cart.png" alt="cart" onClick={() => this.closeWindow()}/>
         <div className="cart-preview-container__cart-preview-background" id="cart-preview-background">
           <input className="cart-preview-container__cart-preview-background__checkbox" type="checkbox" checked={this.state.isOpen} onChange={() => {}}/>
           <div className="cart-preview-container__cart-preview-background__cart-preview" id="cart-preview">

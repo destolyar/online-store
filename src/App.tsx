@@ -1,11 +1,11 @@
 import React from 'react'
-import './app/styles/App.scss'
-import { Navbar } from './app/components/Navbar/Navbar'
+import ItemPage from './app/components/ItemPage/ItemPage'
 import Catalog from './app/components/Catalog/Catalog'
+import { Navbar } from './app/components/Navbar/Navbar'
 import { Switch, Route } from 'react-router-dom'
 import { Cart } from './app/components/Cart/Cart'
-import { ItemPage } from './app/components/ItemPage/ItemPage'
 import { NotFound } from './app/components/NotFound/NotFound'
+import './app/styles/App.scss'
 
 
 class App extends React.Component {
