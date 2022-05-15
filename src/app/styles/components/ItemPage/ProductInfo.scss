@@ -6,6 +6,8 @@
   flex-direction: column;
 
   &__titles {
+    margin-bottom: 40px;
+
     &__brand {
       @include raleway-medium;
       font-size: 30px;
@@ -19,6 +21,7 @@
 
   &__price {
     @include raleway-bold;
+    margin-bottom: 20px;
 
     &__title {
       font-size: 18px;
@@ -31,6 +34,7 @@
 
   &__add-product-button {
     @include add-product-button;
+    margin-bottom: 40px;
 
     &:hover {
       @include default-hover;
@@ -40,7 +44,7 @@
   &__description {
     @include raleway-regular;
 
-    ul > li {
+    ul > li, p {
       margin-bottom: 5px;
     }
   }
