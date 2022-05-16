@@ -5,15 +5,17 @@ import { ProductInfoProps, ProductInfoState } from "./enities/interfaces/product
 import { connect } from "react-redux"
 import { RootState } from "../../store"
 import { Prices } from "../../enities/interfaces/data"
+import { Attribute } from "./Attribute"
 
 class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
   state = {
     price: 0,
-    symbol: ""
+    symbol: "",
+    pickedAttributes: []
   }
 
   //we not set componentDidMount cos at first render we get 
-  //initial state from ProductPage befora data fetching 
+  //initial state from ProductPage before data fetching 
   componentDidUpdate() {
     const previosSymbol = this.props.currency.symbol
     const currentSymbol = this.state.symbol
@@ -41,6 +43,7 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
       brand,
       name,
       description,
+      attributes
     } = this.props.product
 
     const { symbol } = this.props.currency
@@ -53,7 +56,10 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
           <h3 className="product-info__titles__name">{name}</h3>
         </div>
         <div className="product-info__attributes">
-
+          {attributes.map((attribute, index) => <Attribute 
+            key={index} 
+            attribute={attribute} 
+            productName={name}/>)}
         </div>
         <div className="product-info__price">
           <h3 className="product-info__price__title">Price:</h3>

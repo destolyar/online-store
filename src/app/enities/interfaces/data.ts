@@ -8,15 +8,15 @@ export interface Prices {
   amount: string
 }
 
-export interface AttributestItemItem {
+export interface AttributeItem {
   displayValue: string,
   value: string
 }
 
-export interface AttributesItem {
+export interface Attribute{
   type: string,
   name: string,
-  items: AttributestItemItem[]
+  items: AttributeItem[]
 }
 
 export interface CatalogProduct {
@@ -34,7 +34,7 @@ export interface ProductPageProduct {
   gallery: string[],
   description: string,
   brand: string,
-  attributes: AttributesItem[],
+  attributes: Attribute[],
   prices: Prices[],
 }
 

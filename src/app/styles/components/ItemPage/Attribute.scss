@@ -1,0 +1,16 @@
+@import '../../utils/utils.scss';
+
+.attribute {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include raleway-bold;
+    margin-bottom: 7px;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
