@@ -7,6 +7,8 @@ export class AttributeItem extends React.Component<AttributeItemProps, Attribute
     const { value, displayValue } = this.props.item
     const { type, productName, attributeName, index } = this.props
 
+    const { setAttribute } = this.props
+
     const styles = type === 'swatch' ?  {
       backgroundColor: value,
       width: "45px",
@@ -21,7 +23,11 @@ export class AttributeItem extends React.Component<AttributeItemProps, Attribute
         <input className="attribute-item-container__input" type="radio" name={name} id={id} />
         <label className="attribute-item-container__label" 
           htmlFor={id} 
-          style={styles}>{type !== 'swatch' && displayValue}</label>
+          style={styles}
+          onClick={() => {
+            setAttribute(type, attributeName, this.props.item)
+          }}
+          >{type !== 'swatch' && displayValue}</label>
       </div>
     )
   }

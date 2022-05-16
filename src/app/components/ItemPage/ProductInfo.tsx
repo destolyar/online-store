@@ -6,12 +6,19 @@ import { connect } from "react-redux"
 import { RootState } from "../../store"
 import { Prices } from "../../enities/interfaces/data"
 import { Attribute } from "./Attribute"
+import { AttributeItem } from "./AttributeItem"
 
 class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
-  state = {
-    price: 0,
-    symbol: "",
-    pickedAttributes: []
+  constructor(props: ProductInfoProps) {
+    super(props)
+
+    this.state = {
+      price: 0,
+      symbol: "",
+      pickedAttributes: []
+    }
+
+    this.setAttribute = this.setAttribute.bind(this)
   }
 
   //we not set componentDidMount cos at first render we get 
@@ -19,6 +26,8 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
   componentDidUpdate() {
     const previosSymbol = this.props.currency.symbol
     const currentSymbol = this.state.symbol
+
+    console.log(this.state.pickedAttributes)
 
     if(previosSymbol !== currentSymbol) {
       this.setProductPrice()
@@ -36,6 +45,18 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
       price: Math.trunc(price),
       symbol: symbol 
     })
+  }
+
+  setAttribute(type: string, name: string, item: AttributeItem) {
+    const pickedAttribute = {
+      type: type,
+      name: name,
+      pickedAttribute: item
+    }
+
+    this.setState((state: any) => ({
+      pickedAttributes: [...state.pickedAttributes.filter((item: any) => item.name !== name), pickedAttribute]
+    }))
   }
   
   render() {
@@ -59,7 +80,9 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
           {attributes.map((attribute, index) => <Attribute 
             key={index} 
             attribute={attribute} 
-            productName={name}/>)}
+            productName={name}
+            setAttribute={this.setAttribute}
+            />)}
         </div>
         <div className="product-info__price">
           <h3 className="product-info__price__title">Price:</h3>

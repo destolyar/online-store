@@ -9,6 +9,8 @@
   }
 
   &__input:checked ~ &__label {
+    background-color: $item-page-attribute-checked-button-background;
+    color: $button-text-secondary;
     transform: scale(1.1);
     transition: .2s;
   }

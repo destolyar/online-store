@@ -13,10 +13,16 @@ export interface AttributeItem {
   value: string
 }
 
-export interface Attribute{
+export interface Attribute {
   type: string,
   name: string,
   items: AttributeItem[]
+}
+
+export interface PickedAttribute {
+  type: string,
+  name: string,
+  pickedItem: AttributeItem
 }
 
 export interface CatalogProduct {

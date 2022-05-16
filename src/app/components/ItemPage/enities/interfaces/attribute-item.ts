@@ -5,7 +5,8 @@ export interface AttributeItemProps {
   type: string,
   productName: string,
   attributeName: string,
-  index: number
+  index: number,
+  setAttribute: (type: string, name: string, item: AttributeItem) => void
 }
 
 export interface AttributeItemState {

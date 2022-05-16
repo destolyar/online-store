@@ -4,14 +4,6 @@ import { AttributeItem } from "./AttributeItem"
 import { AttributeProps, AttributeState } from "./enities/interfaces/attribute"
 
 export class Attribute extends React.Component<AttributeProps, AttributeState> {
-  componentDidMount() {
-    console.log(this.props.attribute)
-  }
-
-  componentDidUpdate() {
-    console.log(this.props.attribute)
-  }
-
   render() {
     const { name, type, items } = this.props.attribute
     const { productName } = this.props
@@ -26,7 +18,9 @@ export class Attribute extends React.Component<AttributeProps, AttributeState> {
             type={type} 
             productName={productName} 
             index={index} 
-            attributeName={name}/>)}
+            attributeName={name}
+            setAttribute={this.props.setAttribute}
+            />)}
         </div>
       </div>
     )
