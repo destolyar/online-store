@@ -44,6 +44,11 @@ export interface ProductPageProduct {
   prices: Prices[],
 }
 
+export interface CartProduct extends ProductPageProduct {
+  amount: number,
+  pickedAttributes: PickedAttribute[]
+}
+
 export const defaultProduct = {
   name: '',
   inStock: false,

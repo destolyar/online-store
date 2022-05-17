@@ -1,8 +1,12 @@
-import { Currency, PickedAttribute, ProductPageProduct } from "../../../../enities/interfaces/data";
+import { CartProduct, Currency, PickedAttribute, ProductPageProduct } from "../../../../enities/interfaces/data";
 
 export interface ProductInfoProps {
   product: ProductPageProduct,
   currency: Currency,
+  cartProducts: CartProduct[],
+  actions: {
+    setProduct: (newCartProduct: CartProduct, cartProducts: CartProduct[]) => void
+  }
 }
 
 export interface ProductInfoState {

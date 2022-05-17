@@ -4,9 +4,11 @@ import '../../styles/components/ItemPage/ProductInfo.scss'
 import { ProductInfoProps, ProductInfoState } from "./enities/interfaces/product-info"
 import { connect } from "react-redux"
 import { RootState } from "../../store"
-import { Prices } from "../../enities/interfaces/data"
+import { CartProduct, Prices } from "../../enities/interfaces/data"
 import { Attribute } from "./Attribute"
 import { AttributeItem } from "./AttributeItem"
+import { addProduct } from "../../slices/cartSlice"
+import { Action, Dispatch } from "@reduxjs/toolkit"
 
 class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
   constructor(props: ProductInfoProps) {
@@ -27,8 +29,6 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
     const previosSymbol = this.props.currency.symbol
     const currentSymbol = this.state.symbol
 
-    console.log(this.state.pickedAttributes)
-
     if(previosSymbol !== currentSymbol) {
       this.setProductPrice()
     }
@@ -47,6 +47,7 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
     })
   }
 
+  //method what set picked attribute
   setAttribute(type: string, name: string, item: AttributeItem) {
     const pickedAttribute = {
       type: type,
@@ -60,6 +61,8 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
   }
   
   render() {
+    const { product, cartProducts } = this.props
+
     const { 
       brand,
       name,
@@ -68,7 +71,9 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
     } = this.props.product
 
     const { symbol } = this.props.currency
-    const { price } = this.state
+    const { price, pickedAttributes } = this.state
+
+    const { setProduct } = this.props.actions
 
     return(
       <section className="product-info">
@@ -88,7 +93,10 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
           <h3 className="product-info__price__title">Price:</h3>
           <h3 className="product-info__price__amout">{symbol} {price}</h3>
         </div>
-        <button className="product-info__add-product-button">
+        <button className="product-info__add-product-button" onClick={() => {
+          const newCartProduct: CartProduct = Object.assign({}, product, {amount: 1, pickedAttributes: pickedAttributes})
+          setProduct(newCartProduct, cartProducts)
+        }}>
           add to cart
         </button>
         <div className="product-info__description">{parse(description)}</div>
@@ -99,8 +107,23 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
 
 const mapStateToProps = (state: RootState) => {
   return { 
-    currency: state.currencySlice.currency
+    currency: state.currencySlice.currency,
+    cartProducts: state.cartSlice.products
   }
 }
 
-export default connect(mapStateToProps)(ProductInfo)
+const mapDispatchToProps = (dispatch: Dispatch<Action<string>>) => ({
+  actions: {
+    //Check in product do we have this product in global state. If it not true - set it
+    setProduct: (newCartProduct: CartProduct, cartProducts: CartProduct[]) => {
+      const soldProducts = cartProducts.filter((item: CartProduct) => item.name === newCartProduct.name
+      )
+
+      if(soldProducts.length === 0 || undefined) {
+        dispatch(addProduct(newCartProduct))
+      }
+    }
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductInfo)
