@@ -1,8 +1,11 @@
-import React from "react";
-import '../../styles/components/Navbar/CartPreview.scss'
-import { CartPreviewProps, CartPreviewState } from "./enities/interfaces/cart-preview";
+import React from "react"
+import { connect } from "react-redux"
+import { RootState } from "../../../store"
+import { CartPreviewProps, CartPreviewState } from "../enities/interfaces/cart-preview"
+import '../../../styles/components/Navbar/CartPreview/CartPreview.scss'
 
-export class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
+
+class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
   state = {
     isOpen: false
   }
@@ -26,6 +29,7 @@ export class PreviewCart extends React.Component<CartPreviewProps, CartPreviewSt
   }
 
   render() {
+    const { products } = this.props
     return(
       <div className="cart-preview-container">
         <input className="cart-preview-container__checkbox" type="checkbox" checked={this.state.isOpen} onChange={() => {}}/>
@@ -33,17 +37,19 @@ export class PreviewCart extends React.Component<CartPreviewProps, CartPreviewSt
         <div className="cart-preview-container__cart-preview-background" id="cart-preview-background">
           <input className="cart-preview-container__cart-preview-background__checkbox" type="checkbox" checked={this.state.isOpen} onChange={() => {}}/>
           <div className="cart-preview-container__cart-preview-background__cart-preview" id="cart-preview">
-            <h1>11111111111</h1>
-            <h1>11111111111</h1>
-            <h1>11111111111</h1>
-            <h1>11111111111</h1>
-            <h1>11111111111</h1>
-            <h1>11111111111</h1>
-            <h1>11111111111</h1>
-            <h1>11111111111</h1>
+            {products.map((product) => product.name)}
           </div>
         </div>
       </div>
     )
   }
 }
+
+const mapStateToProps = (state: RootState) => {
+  return { 
+    currency: state.currencySlice.currency,
+    products: state.cartSlice.products
+  }
+}
+
+export default connect(mapStateToProps)(PreviewCart)

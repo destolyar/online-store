@@ -1,5 +1,8 @@
-export interface CartPreviewProps {
+import { CartProduct, Currency } from "../../../../enities/interfaces/data"
 
+export interface CartPreviewProps {
+  currency: Currency,
+  products: CartProduct[]
 }
 
 export interface CartPreviewState {
