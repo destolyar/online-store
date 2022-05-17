@@ -8,6 +8,23 @@ export interface Prices {
   amount: string
 }
 
+export interface AttributeItem {
+  displayValue: string,
+  value: string
+}
+
+export interface Attribute {
+  type: string,
+  name: string,
+  items: AttributeItem[]
+}
+
+export interface PickedAttribute {
+  type: string,
+  name: string,
+  pickedItem: AttributeItem
+}
+
 export interface CatalogProduct {
   id: string,
   name: string,
@@ -15,4 +32,30 @@ export interface CatalogProduct {
   inStock: boolean,
   gallery: string[],
   prices: Prices[]
+}
+
+export interface ProductPageProduct {
+  name: string,
+  inStock: boolean,
+  gallery: string[],
+  description: string,
+  brand: string,
+  attributes: Attribute[],
+  prices: Prices[],
+}
+
+export interface CartProduct extends ProductPageProduct {
+  amount: number,
+  pickedAttributes: PickedAttribute[]
+}
+
+export const defaultProduct = {
+  name: '',
+  inStock: false,
+  gallery: [],
+  description: '',
+  category: '',
+  brand: '',
+  prices: [],
+  attributes: [],
 }

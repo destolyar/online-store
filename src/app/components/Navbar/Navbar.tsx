@@ -1,10 +1,11 @@
 import React from "react";
-import '../../styles/components/Navbar/Navbar.scss'
 import CurrencyDropdown from "./CurrencyDropdown";
-import { NavbarActions } from "./NavbarActions";
 import NavbarCategories from "./NavbarCategories";
+import PreviewCart from "./CartPreview/CartPreview";
+import { NavbarActions } from "./NavbarActions";
 import { NavbarLogo } from "./NavbarLogo";
-import { PreviewCart } from "./CartPreview";
+import '../../styles/components/Navbar/Navbar.scss'
+
 
 export class Navbar extends React.Component {
   render() {

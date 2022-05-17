@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  jopa: ['']
+const initialState: any = {
+  products: []
 }
 
 const cartSlice = createSlice({
@@ -9,10 +9,10 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct(state, action) {
-      state.jopa.push(action.payload)
+      state.products.push(action.payload)
     }
   }
 })
 
 export default cartSlice.reducer
-export const {} = cartSlice.actions
+export const { addProduct } = cartSlice.actions

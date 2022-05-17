@@ -5,6 +5,7 @@ import { getProductsByCategory } from '../../requests'
 import { CatalogProps, CatalogState } from "./enities/interfaces/catalog"
 import { CatalogProduct } from "../../enities/interfaces/data"
 import CatalogItem from "./CatalogItem"
+import '../../styles/components/Catalog/Catalog.scss'
 
 class Catalog extends React.Component<CatalogProps, CatalogState> {
   state = {
@@ -37,14 +38,17 @@ class Catalog extends React.Component<CatalogProps, CatalogState> {
 
   render() {
     const { products } = this.state
-    const { currency } = this.props
+    const { currency, category } = this.props
 
     return(
-      <main className="catalog">
-        {products.map((product: CatalogProduct) => 
-          <CatalogItem key={product.id} product={product} currency={currency}/>
-        )}
-      </main>
+      <section className="catalog">
+        <h1 className="catalog__title">Category: {category}</h1>
+        <section className="catalog__items">
+          {products.map((product: CatalogProduct) => 
+            <CatalogItem key={product.id} product={product} currency={currency}/>
+          )}
+        </section>
+      </section>
     )
   }
 }

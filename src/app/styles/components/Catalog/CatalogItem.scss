@@ -1,0 +1,53 @@
+@import '../../utils/utils.scss';
+
+.catalog-item-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 120px;
+  background-color: $catalog-item-background;
+
+  &:hover {
+    @include default-hover;
+    filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19));
+  }
+
+  &__cart {
+    position: absolute;
+    @include catalog-item-button;
+    bottom: 70px;
+    right: 30px;
+    
+    &:hover {
+      @include default-hover;
+      transform: scale(1.4);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    height: 490px;
+    width: 390px;
+    
+    &__image {
+      height: 350px;
+      object-fit: contain;
+    }
+
+    &__info {
+      margin-top: 20px;
+      @include raleway-light;
+      font-size: 1.1rem;
+
+      &__price {
+        @include raleway-medium;
+      }
+    }
+  }
+}

@@ -1,8 +1,10 @@
-import React from "react";
-import { RouteComponentProps, withRouter } from "react-router-dom";
-import { Prices } from "../../enities/interfaces/data";
-import { CatalogItemProps, CatalogItemState } from "./enities/interfaces/item";
-import { OutOfStock } from "./OutOfStock";
+import React from "react"
+import { RouteComponentProps, withRouter } from "react-router-dom"
+import { Prices } from "../../enities/interfaces/data"
+import { CatalogItemProps, CatalogItemState } from "./enities/interfaces/item"
+import { OutOfStock } from "./OutOfStock"
+import '../../styles/components/Catalog/CatalogItem.scss'
+
 
 class CatalogItem extends React.Component<CatalogItemProps & RouteComponentProps<any>, CatalogItemState> {
   state = {
@@ -51,16 +53,18 @@ class CatalogItem extends React.Component<CatalogItemProps & RouteComponentProps
     const { price } = this.state
 
     return(
-      <div className="catalog-item-container" onClick={() => this.redirectToItemPage()}>
+      <div className="catalog-item-container">
         <div className="catalog-item-container__cart">
           <img src="./cart.png" alt="Product cart" />
         </div>
-        <div className="catalog-item-container__item">
-          {(inStock) ? <img src={gallery[0]} alt="Product image"/> : 
-            <OutOfStock><img src={gallery[0]} alt="Product image"/></OutOfStock>}
-          <p className="catalog-item-container__item__brand">{brand}</p>
-          <p className="catalog-item-container__item__name">{name}</p>
-          <p className="catalog-item-container__item__price">{symbol + ' ' + price}</p>
+        <div className="catalog-item-container__item" onClick={() => this.redirectToItemPage()}>
+          {(inStock) ? <img className="catalog-item-container__item__image" src={gallery[0]} alt="Product image"/> : 
+            <OutOfStock><img className="catalog-item-container__item__image" src={gallery[0]} alt="Product image"/></OutOfStock>}
+          <div className="catalog-item-container__item__info">
+            <p className="catalog-item-container__item__info__brand">{brand}</p>
+            <p className="catalog-item-container__item__info__name">{name}</p>
+            <p className="catalog-item-container__item__info__price">{symbol + ' ' + price}</p>
+          </div>
         </div>
       </div>
     )

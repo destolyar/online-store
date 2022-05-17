@@ -1,0 +1,27 @@
+@import '../../utils/utils.scss';
+
+.image-switcher {
+  display: flex;
+
+  &__images {
+    height: 580px;
+    margin-right: 40px;
+    overflow: scroll;
+    &__image {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 40px;
+      object-fit: cover;
+
+      &:hover {
+        @include default-hover;
+      }
+    }
+  }
+
+  &__picked-image {
+    height: 580px;
+    max-width: 580px;
+    object-fit: cover;
+  }
+}
