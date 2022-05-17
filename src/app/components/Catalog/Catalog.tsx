@@ -53,7 +53,7 @@ class Catalog extends React.Component<CatalogProps, CatalogState> {
   }
 }
 
-//get currency and category from global store
+//get currency and category from global store.
 const mapStateToProps = (state: RootState) => {
   return { 
     category: state.categorySlice.category,
