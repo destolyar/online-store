@@ -1,11 +1,14 @@
 import React from "react";
 import { CartPreviewItemProps, CartPreviewItemState } from "./enities/interfaces/cart-preview-item";
+import '../../../styles/components/Navbar/CartPreview/CartPreviewItem.scss'
 import { ItemPrice } from "./ItemPrice";
+import ItemAmount from "./ItemAmount";
+import { Attribute } from "./Attribute";
 
 
 export class CartPreviewItem extends React.Component<CartPreviewItemProps, CartPreviewItemState> {    
   render() {
-    const { brand, name, gallery, prices } = this.props.product
+    const { brand, name, gallery, prices, attributes, amount } = this.props.product
     const { symbol } = this.props.currency
 
     return(
@@ -17,12 +20,10 @@ export class CartPreviewItem extends React.Component<CartPreviewItemProps, CartP
           </div>
           <ItemPrice prices={prices} symbol={symbol}/>
           <div className="cart-preview-item__info__attributes">
-
+            {attributes.map((item) => <Attribute name={item.name}/>)}
           </div>
         </div>
-        <div className="cart-preview-item__amount">
-          +
-        </div>
+        <ItemAmount amount={amount} name={name}/>
         <img className="cart-preview-item__image" src={gallery[0]} alt="" />
       </div>
     )

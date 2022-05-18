@@ -31,7 +31,7 @@ class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
     const { isOpen } = this.state
     const element = e.target as HTMLElement
     
-    const inContainer = element.className.includes("cart-preview-item") || element.className.includes("cart-preview-container")
+    const inContainer = element.className.includes("cart-preview-item") || element.className.includes("cart-preview-container") || element.className.includes("item-amount")
     
     if((element.id === "cart-preview-background") || (!inContainer) && isOpen) {
       this.changeWindowVisibility()

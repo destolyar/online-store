@@ -1,0 +1,27 @@
+@import '../../../utils/utils.scss';
+
+.item-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &__value {
+    @include raleway-medium;
+    font-size: 1.2rem;
+  }
+  
+  &__increase, &__decrease {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: transparent;
+
+    &:hover {
+      @include default-hover;
+    }
+  }
+}
