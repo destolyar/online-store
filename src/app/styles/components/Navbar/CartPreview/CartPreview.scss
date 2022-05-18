@@ -1,6 +1,7 @@
 @import '../../../utils/utils.scss';
 
 .cart-preview-container {
+  position: relative;
   &__checkbox {
     display: none;
   }
@@ -16,6 +17,24 @@
 
     &:hover {
       @include default-hover;
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: black;
+    color: $text-secondary;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 
@@ -41,12 +60,21 @@
     &__cart-preview {
       position: absolute;
       overflow: hidden;
+      padding: 20px;
       right: 50px;
       min-width: 400px;
       min-height: 0px;
       max-height: 0%;
       background-color: #FFFFFF;
       transition: .5s;
+
+      &__title {
+        @include raleway-medium;
+      }
+
+      &__items {
+        
+      }
     }
   }
 }

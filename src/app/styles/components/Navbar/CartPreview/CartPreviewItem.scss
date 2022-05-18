@@ -1,0 +1,11 @@
+@import '../../../utils/utils.scss';
+
+.cart-preview-item {
+  margin-top: 30px;
+  &__titles {
+    &__brand, &__name {
+      @include raleway-light;
+      font-size: 1rem;
+    }
+  }
+}

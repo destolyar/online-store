@@ -5,9 +5,11 @@ import '../../styles/components/Navbar/NavbarLogo.scss'
 export class NavbarLogo extends React.Component {
   render() {
     return(
-      <Link className="navbar__logo-container" to='/'>
+      <div className="navbar__logo-container">
+        <Link to='/'>
           <img className="navbar__logo-container__logo" src="/logo.png" alt="logo" /> 
-      </Link>
+        </Link>
+      </div>
     )
   }
 }
