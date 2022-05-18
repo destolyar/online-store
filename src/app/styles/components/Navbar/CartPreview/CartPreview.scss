@@ -22,8 +22,8 @@
 
   &__counter {
     position: absolute;
-    top: -10px;
-    left: 10px;
+    top: -12px;
+    left: 12px;
     width: 20px;
     height: 20px;
     display: flex;
@@ -59,7 +59,7 @@
 
     &__cart-preview {
       position: absolute;
-      overflow: hidden;
+      overflow: scroll;
       padding: 20px;
       right: 50px;
       min-width: 400px;
@@ -70,10 +70,6 @@
 
       &__title {
         @include raleway-medium;
-      }
-
-      &__items {
-        
       }
     }
   }

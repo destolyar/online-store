@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { RootState } from "../../../store"
-import { CartPreviewProps, CartPreviewState } from "../enities/interfaces/cart-preview"
+import { CartPreviewProps, CartPreviewState } from "./enities/interfaces/cart-preview"
 import '../../../styles/components/Navbar/CartPreview/CartPreview.scss'
 import { CartPreviewItem } from "./CartPreviewItem"
 
@@ -12,11 +12,11 @@ class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
   }
 
   componentDidMount() {
-    this.setCloseWindowEvent()
+    document.addEventListener("click", (e) => this.closeWindowEvent(e))
   }
 
   componentWillUnmount() {
-    this.removeCloseWindowEvent()
+    document.removeEventListener("click", (e) => this.closeWindowEvent(e))
   }
 
   changeWindowVisibility() {
@@ -25,14 +25,8 @@ class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
     }))
   }
 
-  setCloseWindowEvent() {
-    document.addEventListener("click", (e) => this.closeWindowEvent(e))
-  }
-
-  removeCloseWindowEvent() {
-    document.removeEventListener("click", (e) => this.closeWindowEvent(e))
-  }
-
+  //check element class name on having a class of container and items
+  //if nothing found(or click on background) - close cart window
   closeWindowEvent(e: MouseEvent) {
     const { isOpen } = this.state
     const element = e.target as HTMLElement
@@ -46,11 +40,11 @@ class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
 
   render() {
     const { products, currency } = this.props
-    const { isOpen } = this.state
+
     return(
-      <div className="cart-preview-container" onClick={() => !isOpen && this.changeWindowVisibility()}>
+      <div className="cart-preview-container">
         <input className="cart-preview-container__checkbox" type="checkbox" checked={this.state.isOpen} onChange={() => {}}/>
-        <img className="cart-preview-container__image" src="/header-cart.png" alt="cart"/>
+        <img className="cart-preview-container__image" src="/header-cart.png" alt="cart" onClick={() => this.changeWindowVisibility()}/>
         <div className="cart-preview-container__counter">{products.length}</div>
         <div className="cart-preview-container__cart-preview-background" id="cart-preview-background">
           <input className="cart-preview-container__cart-preview-background__checkbox" type="checkbox" checked={this.state.isOpen} onChange={() => {}}/>
