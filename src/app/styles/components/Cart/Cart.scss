@@ -1,0 +1,15 @@
+@import '../../utils/utils.scss';
+
+.cart {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include page-title;
+    text-transform: uppercase;
+  }
+
+  &__items {
+    
+  }
+}
