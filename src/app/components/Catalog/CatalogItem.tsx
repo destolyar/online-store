@@ -45,10 +45,9 @@ class CatalogItem extends React.Component<CatalogItemProps & RouteComponentProps
     const { 
     name,
     brand,
+    inStock,
     gallery,
     } = this.props.product
-
-    const inStock = false
 
     const { symbol } = this.props.currency
     const { price } = this.state
