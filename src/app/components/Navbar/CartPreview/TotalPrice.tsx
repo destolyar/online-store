@@ -13,7 +13,7 @@ export class TotalPrice extends React.Component<TotalPriceProps, TotalPriceState
     const { products, currency } = this.props
     const { totalProducts, currentCurrency } = this.state 
 
-    const numOfProducts = products.map(product => product.amount).reduce((previosNum, currentNum) => previosNum + currentNum)
+    const numOfProducts = products.map(product => product.amount).reduce((previosNum, currentNum) => previosNum + currentNum, 0)
     
     if(numOfProducts !== totalProducts || currentCurrency !== currency.symbol) {
       this.updateTotalAmount(numOfProducts)
@@ -24,7 +24,7 @@ export class TotalPrice extends React.Component<TotalPriceProps, TotalPriceState
     const { products, currency } = this.props
 
     const prices = products.map(product => Math.trunc(+product.prices.filter(price => price.currency.symbol === currency.symbol)[0].amount) * product.amount)
-    const totalPrice = prices.reduce((previosPrice, currentPrice) => previosPrice + currentPrice)
+    const totalPrice = prices.reduce((previosPrice, currentPrice) => previosPrice + currentPrice, 0)
     this.setState({
       totalAmount: totalPrice,
       totalProducts: numOfProducts,

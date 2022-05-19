@@ -29,9 +29,13 @@ const cartSlice = createSlice({
       const productIndex = state.products.findIndex(item => item.name === action.payload.name)
       const attributeIndex = state.products[productIndex].pickedAttributes.findIndex(attribute => attribute.name === action.payload.pickedAttribute.name)
       state.products[productIndex].pickedAttributes[attributeIndex] = action.payload.pickedAttribute
+    },
+
+    clearCart(state) {
+      state.products = []
     }
   }
 })
 
 export default cartSlice.reducer
-export const { addProduct, changeAmountOfProduct, changePickedAttribute } = cartSlice.actions
+export const { addProduct, changeAmountOfProduct, changePickedAttribute, clearCart } = cartSlice.actions

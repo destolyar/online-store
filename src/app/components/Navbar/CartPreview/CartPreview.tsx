@@ -5,6 +5,7 @@ import { CartPreviewProps, CartPreviewState } from "./enities/interfaces/cart-pr
 import '../../../styles/components/Navbar/CartPreview/CartPreview.scss'
 import { CartPreviewItem } from "./CartPreviewItem"
 import { TotalPrice } from "./TotalPrice"
+import Buttons from "./Buttons"
 
 
 class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
@@ -32,7 +33,11 @@ class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
     const { isOpen } = this.state
     const element = e.target as HTMLElement
     
-    const inContainer = element.className.includes("cart-preview-item") || element.className.includes("cart-preview-container") || element.className.includes("item-amount")
+    //i don't know how to implement it better, sorry for the shit-code...
+    const inContainer = element.className.includes("cart-preview-item") 
+    || element.className.includes("cart-preview-container") 
+    || element.className.includes("item-amount")
+    || element.className.includes("cart-preview-buttons")
     
     if((element.id === "cart-preview-background") || (!inContainer) && isOpen) {
       this.changeWindowVisibility()
@@ -55,6 +60,7 @@ class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
               {products.map((product) => <CartPreviewItem key={product.name} product={product} currency={currency}/>)}
             </div>
             <TotalPrice products={products} currency={currency}/>
+            <Buttons/>
           </div>
         </div>
       </div>
