@@ -1,12 +1,11 @@
 import React from "react";
+import '../../styles/components/Catalog/OutOfStock.scss'
 
 export class OutOfStock extends React.Component {
   render() {
-    const { children } = this.props
-
     return(
       <div className="out-of-stock">
-        {children}
+        Out Of Stock
       </div>
     )
   }
