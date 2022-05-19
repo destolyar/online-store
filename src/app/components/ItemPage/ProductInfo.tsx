@@ -67,7 +67,8 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
       brand,
       name,
       description,
-      attributes
+      attributes,
+      inStock
     } = this.props.product
 
     const { symbol } = this.props.currency
@@ -95,7 +96,7 @@ class ProductInfo extends React.Component<ProductInfoProps, ProductInfoState> {
         </div>
         <button className="product-info__add-product-button" onClick={() => {
           const newCartProduct: CartProduct = Object.assign({}, product, {amount: 1, pickedAttributes: pickedAttributes})
-          setProduct(newCartProduct, cartProducts)
+          inStock && setProduct(newCartProduct, cartProducts)
         }}>
           add to cart
         </button>

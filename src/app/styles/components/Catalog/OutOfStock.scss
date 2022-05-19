@@ -1,0 +1,14 @@
+@import '../../utils/utils.scss';
+
+.out-of-stock {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  @include raleway-regular;
+  font-size: 24px;
+  color: $out-of-stock-text-color;
+  background-color: rgba($color: $catalog-item-background, $alpha: .6);
+}
