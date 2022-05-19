@@ -1,4 +1,13 @@
+@import '../../../utils/utils.scss';
+
 .cart-preview-item-attribute {
+  &__title {
+    @include raleway-regular;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
   &__items {
     display: flex;
     flex-wrap: wrap;

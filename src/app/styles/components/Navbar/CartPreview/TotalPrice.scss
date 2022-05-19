@@ -1,0 +1,10 @@
+@import '../../../utils/utils.scss';
+
+.cart-preview-total-price {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  @include raleway-medium;
+}

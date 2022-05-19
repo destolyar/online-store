@@ -4,6 +4,7 @@ import { RootState } from "../../../store"
 import { CartPreviewProps, CartPreviewState } from "./enities/interfaces/cart-preview"
 import '../../../styles/components/Navbar/CartPreview/CartPreview.scss'
 import { CartPreviewItem } from "./CartPreviewItem"
+import { TotalPrice } from "./TotalPrice"
 
 
 class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
@@ -53,6 +54,7 @@ class PreviewCart extends React.Component<CartPreviewProps, CartPreviewState> {
             <div className="cart-preview-container__cart-preview-background__cart-preview__items">
               {products.map((product) => <CartPreviewItem key={product.name} product={product} currency={currency}/>)}
             </div>
+            <TotalPrice products={products} currency={currency}/>
           </div>
         </div>
       </div>

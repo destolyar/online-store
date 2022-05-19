@@ -9,7 +9,7 @@ export class Attribute extends React.Component<CartPreviewAttributeProps, CartPr
 
     return(
       <div className="cart-preview-item-attribute">
-        <h3 className="cart-preview-item-attribute">{name}:</h3>
+        <h3 className="cart-preview-item-attribute__title">{name}:</h3>
         <div className="cart-preview-item-attribute__items">
           {items.map((item, index) => <AttributeItem 
             key={index} 

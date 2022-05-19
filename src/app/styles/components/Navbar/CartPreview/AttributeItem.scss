@@ -25,7 +25,7 @@
     border: 1px solid black;
 
     &:hover {
-      @include default-hover;
+      cursor: pointer;
     }
   }
 }

@@ -14,7 +14,7 @@ class AttributeItem extends React.Component<CartPreviewAttributeItemProps, CartP
     const { type, pickedAttribute, attributeName, productName, index } = this.props
 
     const { setAttribute } = this.props.actions
-
+    
     const styles = type === 'swatch' ?  {
       backgroundColor: value,
     } : {}

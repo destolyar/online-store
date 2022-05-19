@@ -64,11 +64,11 @@
       right: 50px;
       min-width: 400px;
       min-height: 0px;
-      max-height: 0%;
       background-color: #FFFFFF;
       transition: .5s;
 
       &__title {
+        margin-top: 20px;
         @include raleway-medium;
       }
     }
