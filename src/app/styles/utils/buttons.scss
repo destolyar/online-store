@@ -19,3 +19,24 @@
   border-radius: 50%;
   background-color: $catalog-item-button-background;
 }
+
+@mixin cart-preview-view-bag-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 165px;
+  height: 55px;
+  text-decoration: none;
+  border: 1px solid black;
+  text-transform: uppercase;
+  color: $button-text-primary;
+}
+
+@mixin cart-preview-view-check-out {
+  width: 165px;
+  height: 55px;
+  border: 0;
+  text-transform: uppercase;
+  color: $button-text-secondary;
+  background-color: $cart-preview-button-background;
+}

@@ -1,10 +1,9 @@
-@import '../../utils/utils.scss';
+@import '../../../utils/utils.scss';
 
-
-.attribute-item-container {
+.cart-preview-item-attribute-container {
   display: flex;
-  margin-bottom: 15px;
-  
+  margin-right: 5px;
+
   &__input {
     display: none;
   }
@@ -20,13 +19,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
-    width: 65px;
-    margin-right: 7px;
+    width: 35px;
+    height: 35px;
+    font-size: 11px;
     border: 1px solid black;
-    text-align: center;
-    @include raleway-regular;
-    font-size: 14px;
 
     &:hover {
       cursor: pointer;

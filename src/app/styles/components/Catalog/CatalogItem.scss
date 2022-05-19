@@ -18,7 +18,7 @@
   &__cart {
     position: absolute;
     @include catalog-item-button;
-    bottom: 70px;
+    bottom: 90px;
     right: 30px;
     
     &:hover {
@@ -46,6 +46,7 @@
       font-size: 1.1rem;
 
       &__price {
+        margin-top: 10px;
         @include raleway-medium;
       }
     }

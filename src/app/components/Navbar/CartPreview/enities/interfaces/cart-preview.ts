@@ -1,4 +1,4 @@
-import { CartProduct, Currency } from "../../../../enities/interfaces/data"
+import { CartProduct, Currency } from "../../../../../enities/interfaces/data"
 
 export interface CartPreviewProps {
   currency: Currency,

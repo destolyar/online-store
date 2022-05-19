@@ -63,7 +63,7 @@ class CatalogItem extends React.Component<CatalogItemProps & RouteComponentProps
           <div className="catalog-item-container__item__info">
             <p className="catalog-item-container__item__info__brand">{brand}</p>
             <p className="catalog-item-container__item__info__name">{name}</p>
-            <p className="catalog-item-container__item__info__price">{symbol + ' ' + price}</p>
+            <p className="catalog-item-container__item__info__price">{symbol}{price}</p>
           </div>
         </div>
       </div>

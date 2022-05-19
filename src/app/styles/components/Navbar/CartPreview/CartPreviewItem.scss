@@ -1,0 +1,36 @@
+@import '../../../utils/utils.scss';
+
+.cart-preview-item {
+  display: flex;
+  justify-content: space-between;
+  min-height: 170px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+
+  &__info {
+    width: 200px;
+
+    &__titles {
+      &__brand, &__name {
+        @include raleway-light;
+        font-size: 1rem;
+      }
+    }
+
+    &__price {
+      margin-top: 5px;
+      @include raleway-medium;
+    }
+  }
+
+  &__amount {
+    width: 50px;
+  }
+
+  &__image {
+    height: 170px;
+    width: 105px;
+    object-fit: cover;
+  }
+}
