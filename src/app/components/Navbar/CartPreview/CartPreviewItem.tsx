@@ -8,7 +8,7 @@ import { Attribute } from "./Attribute";
 
 export class CartPreviewItem extends React.Component<CartPreviewItemProps, CartPreviewItemState> {    
   render() {
-    const { brand, name, gallery, prices, attributes, amount } = this.props.product
+    const { brand, name, gallery, prices, attributes, amount, pickedAttributes } = this.props.product
     const { symbol } = this.props.currency
 
     return(
@@ -20,7 +20,14 @@ export class CartPreviewItem extends React.Component<CartPreviewItemProps, CartP
           </div>
           <ItemPrice prices={prices} symbol={symbol}/>
           <div className="cart-preview-item__info__attributes">
-            {attributes.map((item) => <Attribute name={item.name}/>)}
+            {attributes.map((item, index) => <Attribute 
+              key={index} 
+              name={item.name} 
+              productName={name}
+              type={item.type} 
+              items={item.items} 
+              pickedAttribute={pickedAttributes.filter((pickedAttribute) => 
+                item.name === pickedAttribute.name)[0]}/>)}
           </div>
         </div>
         <ItemAmount amount={amount} name={name}/>

@@ -22,7 +22,7 @@ export interface Attribute {
 export interface PickedAttribute {
   type: string,
   name: string,
-  pickedItem: AttributeItem
+  pickedAttribute: AttributeItem
 }
 
 export interface CatalogProduct {

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { CartProduct } from "../enities/interfaces/data";
 
-const initialState: { products: CartProduct[]; } = {
+const initialState: { products: CartProduct[] } = {
   products: []
 }
 
@@ -23,9 +23,15 @@ const cartSlice = createSlice({
       if(state.products[productIndex].amount <= 0) {
         state.products = state.products.filter(product => product.name !== action.payload.name)
       }
+    },
+
+    changePickedAttribute(state, action) {
+      const productIndex = state.products.findIndex(item => item.name === action.payload.name)
+      const attributeIndex = state.products[productIndex].pickedAttributes.findIndex(attribute => attribute.name === action.payload.pickedAttribute.name)
+      state.products[productIndex].pickedAttributes[attributeIndex] = action.payload.pickedAttribute
     }
   }
 })
 
 export default cartSlice.reducer
-export const { addProduct, changeAmountOfProduct } = cartSlice.actions
+export const { addProduct, changeAmountOfProduct, changePickedAttribute } = cartSlice.actions
