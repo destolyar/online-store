@@ -1,0 +1,13 @@
+@import '../../utils/utils.scss';
+
+.cart-item-attribute {
+  margin-top: 20px;
+  
+  &__title {
+    @include raleway-bold;
+  }
+
+  &__items {
+    display: flex;
+  }
+}

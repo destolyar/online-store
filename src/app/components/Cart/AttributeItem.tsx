@@ -4,6 +4,7 @@ import { Action, Dispatch } from "@reduxjs/toolkit";
 import { CartPreviewAttributeItemProps, CartPreviewAttributeItemState } from "../Navbar/CartPreview/enities/interfaces/attribute-item";
 import { changePickedAttribute } from "../../slices/cartSlice";
 import { PickedAttribute } from "../../enities/interfaces/data";
+import '../../styles/components/Cart/AttributeItem.scss'
 
 
 class AttributeItem extends React.Component<CartPreviewAttributeItemProps, CartPreviewAttributeItemState> {
@@ -15,6 +16,8 @@ class AttributeItem extends React.Component<CartPreviewAttributeItemProps, CartP
     const { setAttribute } = this.props.actions
     
     const styles = type === 'swatch' ?  {
+      width: "35px",
+      height: "35px",
       backgroundColor: value,
     } : {}
 

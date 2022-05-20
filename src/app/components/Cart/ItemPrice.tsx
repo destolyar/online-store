@@ -1,6 +1,8 @@
 import React from "react";
 import { Prices } from "../../enities/interfaces/data";
 import { ItemPriceProps, ItemPriceState } from "../Navbar/CartPreview/enities/interfaces/item-price";
+import '../../styles/components/Cart/ItemPrice.scss'
+
 
 export class ItemPrice extends React.Component<ItemPriceProps, ItemPriceState> {
   state = {

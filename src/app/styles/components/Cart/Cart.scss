@@ -3,13 +3,16 @@
 .cart {
   display: flex;
   flex-direction: column;
+  padding: 0 10px;
 
   &__title {
     @include page-title;
     text-transform: uppercase;
+    margin-bottom: 60px;
   }
 
   &__items {
-    
+    display: flex;
+    flex-direction: column;
   }
 }

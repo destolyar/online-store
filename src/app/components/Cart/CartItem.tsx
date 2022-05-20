@@ -1,8 +1,10 @@
-import React from "react";
-import { Attribute } from "./Attribute";
-import { CartItemProps, CartItemState } from "./enities/interfaces/cart-item";
-import ItemAmount from "./ItemAmount";
-import { ItemPrice } from "./ItemPrice";
+import React from "react"
+import { Attribute } from "./Attribute"
+import { CartItemProps, CartItemState } from "./enities/interfaces/cart-item"
+import ItemAmount from "./ItemAmount"
+import { ItemPrice } from "./ItemPrice"
+import '../../styles/components/Cart/CartItem.scss'
+import { ItemImageSwitcher } from "./ItemImageSwitcher"
 
 export class CartItem extends React.Component<CartItemProps, CartItemState> {
   render() {
@@ -29,7 +31,7 @@ export class CartItem extends React.Component<CartItemProps, CartItemState> {
           </div>
         </div>
         <ItemAmount amount={amount} name={name}/>
-        <img className="cart-item__image" src={gallery[0]} alt="" />
+        <ItemImageSwitcher gallery={gallery}/>
       </div>
     )
   }

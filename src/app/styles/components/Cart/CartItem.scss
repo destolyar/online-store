@@ -1,0 +1,30 @@
+@import '../../utils/utils.scss';
+
+.cart-item {
+  display: flex;
+  padding: 25px 0;
+  justify-content: space-between;
+  border-top: 1px solid #E5E5E5;
+
+  &__info {
+    &__titles {
+      &__brand {
+        @include raleway-medium;
+      }
+
+      &__name {
+        @include raleway-regular;
+      }
+
+      &__brand, &__name {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__image {
+    height: 280px;
+    width: 200px;
+    object-fit: cover;
+  }
+}

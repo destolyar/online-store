@@ -1,5 +1,6 @@
 import React from "react";
 import { CartPreviewAttributeProps, CartPreviewAttributeState } from "../Navbar/CartPreview/enities/interfaces/attribute";
+import '../../styles/components/Cart/Attribute.scss'
 import AttributeItem from "./AttributeItem";
 
 
