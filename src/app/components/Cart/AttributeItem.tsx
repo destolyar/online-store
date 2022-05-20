@@ -1,10 +1,10 @@
 import React from "react";
-import { CartPreviewAttributeItemProps, CartPreviewAttributeItemState } from "./enities/interfaces/attribute-item";
-import '../../../styles/components/Navbar/CartPreview/AttributeItem.scss'
 import { connect } from "react-redux";
 import { Action, Dispatch } from "@reduxjs/toolkit";
-import { changePickedAttribute } from "../../../slices/cartSlice";
-import { PickedAttribute } from "../../../enities/interfaces/data";
+import { CartPreviewAttributeItemProps, CartPreviewAttributeItemState } from "../Navbar/CartPreview/enities/interfaces/attribute-item";
+import { changePickedAttribute } from "../../slices/cartSlice";
+import { PickedAttribute } from "../../enities/interfaces/data";
+import '../../styles/components/Cart/AttributeItem.scss'
 
 
 class AttributeItem extends React.Component<CartPreviewAttributeItemProps, CartPreviewAttributeItemState> {
@@ -16,17 +16,19 @@ class AttributeItem extends React.Component<CartPreviewAttributeItemProps, CartP
     const { setAttribute } = this.props.actions
     
     const styles = type === 'swatch' ?  {
+      width: "35px",
+      height: "35px",
       backgroundColor: value,
     } : {}
 
-    const inputName = `cart-preview-${productName}-${attributeName}`
+    const inputName = `cart-${productName}-${attributeName}`
     const id = inputName + `-${index}`
     
     return(
-      <div className="cart-preview-item-attribute-container">
-        <input className="cart-preview-item-attribute-container__input" id={id} type="radio" 
+      <div className="cart-item-attribute-container">
+        <input className="cart-item-attribute-container__input" id={id} type="radio" 
           name={inputName} checked={pickedAttribute.pickedAttribute === item} onChange={() => {}}/>
-        <label className="cart-preview-item-attribute-container__label" 
+        <label className="cart-item-attribute-container__label" 
           style={styles} htmlFor={id} onClick={() => {
             const pickedAttribute = {
               name: attributeName,

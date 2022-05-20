@@ -1,0 +1,11 @@
+@import '../../utils/utils.scss';
+
+.empty-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &__title {
+    @include page-title;
+  }
+}

@@ -1,0 +1,7 @@
+@import '../../utils/utils.scss';
+
+.cart-item-price {
+  margin-top: 20px;
+  @include raleway-medium;
+  font-size: 24px;
+}

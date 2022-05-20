@@ -1,0 +1,39 @@
+@import '../../utils/utils.scss';
+
+.cart-item-image-switcher {
+  position: relative;
+  height: 280px;
+  width: 200px;
+
+  &__buttons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+
+    &__previos-image, &__next-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      padding-bottom: 5px;
+      font-size: 20px;
+      border: 0;
+      color: $text-secondary;
+      background-color: rgba(0, 0, 0, 0.73);
+
+      &:hover {
+        @include default-hover;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

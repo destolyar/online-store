@@ -40,3 +40,13 @@
   color: $button-text-secondary;
   background-color: $cart-preview-button-background;
 }
+
+@mixin order-button {
+  width: 280px;
+  height: 50px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $text-secondary;
+  border: 0;
+  background-color: $cart-order-button;
+} 
