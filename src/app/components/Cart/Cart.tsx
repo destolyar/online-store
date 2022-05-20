@@ -5,12 +5,9 @@ import { CartProps, CartState } from "./enities/interfaces/cart";
 import '../../styles/components/Cart/Cart.scss'
 import Order from "./Order";
 import { CartItem } from "./CartItem";
+import { EmptyCart } from "./EmptyCart";
 
 class Cart extends React.Component<CartProps, CartState> {
-  componentDidMount() {
-    console.log(this.props.products)
-  }
-
   render() {
     const { products, currency } = this.props
     return(
@@ -19,7 +16,7 @@ class Cart extends React.Component<CartProps, CartState> {
         <div className="cart__items">
           {products.map(product => <CartItem key={product.name} product={product} currency={currency}/>)}
         </div>
-        <Order/>
+        {(products.length === 0) ? <EmptyCart/> : <Order/>}
       </main>
     )
   }
