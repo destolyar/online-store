@@ -51,7 +51,7 @@ class Order extends React.Component<CartOrderProps, CartOrderState> {
     return(
       <div className="order">
         <h3 className="order__tax">tax 21%: <span className="order__tax__value">
-          {currentCurrency}{totalAmount * 0.21}
+          {currentCurrency}{Math.trunc(totalAmount * 0.21)}
         </span></h3>
         <h3 className="order__quanity">quanity: <span className="order__quanity__value">{totalProducts}</span></h3>
         <h3 className="order__total-amount">total: {currentCurrency}{totalAmount}</h3>
