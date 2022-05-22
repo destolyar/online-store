@@ -82,8 +82,8 @@ class CatalogItem extends React.Component<CatalogItemProps & RouteComponentProps
 
     return(
       <div className="catalog-item-container">
-        {inStock && <div className="catalog-item-container__cart">
-          <img src="./cart.png" alt="Product cart" onClick={() => this.addDefaultProductToCart()}/>
+        {inStock && <div className="catalog-item-container__cart" onClick={() => this.addDefaultProductToCart()}>
+          <img src="./cart.png" alt="Product cart"/>
         </div>} 
         <div className="catalog-item-container__item" onClick={() => this.redirectToItemPage()}>
           {!inStock && <OutOfStock/>}
