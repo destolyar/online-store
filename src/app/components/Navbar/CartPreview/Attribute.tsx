@@ -6,7 +6,7 @@ import { CartPreviewAttributeProps, CartPreviewAttributeState } from "./enities/
 export class Attribute extends React.Component<CartPreviewAttributeProps, CartPreviewAttributeState> {
   render() {
     const { name, type, items, pickedAttribute, productName } = this.props
-
+    
     return(
       <div className="cart-preview-item-attribute">
         <h3 className="cart-preview-item-attribute__title">{name}:</h3>
