@@ -5,6 +5,7 @@
   width: 30%;
 
   &__container {
+    display: block;
     margin-right: 30px;
     
     &__input {
@@ -17,6 +18,7 @@
       justify-content: center;
       padding: 15px;
       text-transform: capitalize;
+      text-decoration: none;
       min-width: 70px;
       @include raleway-regular;
       color: $text-primary;
