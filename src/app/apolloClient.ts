@@ -2,5 +2,8 @@ import { ApolloClient, InMemoryCache, NormalizedCacheObject } from "@apollo/clie
 
 export const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache: new InMemoryCache({}),
-  uri: 'https://online-store-endpoints.herokuapp.com/'
+  uri: 'https://online-store-endpoints.herokuapp.com/',
+  headers: {
+    "Access-Control-Allow-Origin": "*"
+  }
 })
