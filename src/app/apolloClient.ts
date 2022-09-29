@@ -2,5 +2,5 @@ import { ApolloClient, HttpLink, InMemoryCache, NormalizedCacheObject } from "@a
 
 export const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache: new InMemoryCache({}),
-  uri: 'https://online-store-endpoints.herokuapp.com/'
+  uri: 'http://localhost:4000'
 })
